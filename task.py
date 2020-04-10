@@ -31,22 +31,34 @@ while (True):
     "password": random_password
      })
 
+#check for user's satisfaction
     print (f"{str1}, this password has been generated for you: {random_password} ")
     cont = input("Are you okay with it? (Y/N) ")
     if cont == "Y":
+        user_data.append(random_password)
         break
 
     else:
-        new_password = input("Enter your choice password: ")
+        new_password = input("Enter your choice password greater than or equal to 7: ")
 
         def new_password():
             if len(new_password) >= 7:
                 random_password.clear
                 random_password += new_password
                 return new_password
+            else:
+                print("Password must be greater than or equal to 7")
+                new_password = input("Enter password greater than or equal to 7")
 
+#new user_data
+new_user = input("Would you like to enter a new user? (Y/N) ")
+if new_user =="N":
+    print(user_data)
+    user_data = false
 
-            return "Password must be greater than or equal to 7"
+else:
+    print("Your details \n")
+
 
 print(f"Here are your details")
 print(user_data)
